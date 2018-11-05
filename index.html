@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #path_background {
+            stroke-dasharray: 20;
+        }
+
+        .globus {
+            padding: 20px;
+            border-radius: 50%;
+            background-color: gray;
+            display: inline-block
+        }
+
+        .verylong {
+            height: 2000px;
+        }
+
+        svg {
+            position: fixed;
+            width: 32vw;
+            height: 200px;
+        }
+
+        svg circle {
+            position: relative;
+        }
+
+        svg circle::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid black
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg viewbox="-800 0 570 200" style="overflow:visible" fill="none">
+        <!--background-path-->
+        <path stroke="#ccc" stroke-width="7" id="path_background" d="M800 10 Q -74.5 80 58.5 203 T 300 300,T -20 -20 ,T -20 600 , T 0 200" />
+
+        <!--foreground-path-->
+        <path stroke-width="7" stroke="LimeGreen" id="path" d="M800 10 Q -74.5 80 58.5 203 T 300 300,T -20 -20  T -20 600 , T 0 200 " />
+
+        <circle cx="0" cy="0" r="40" fill="gray" style='border:1px solid black' id="dot"></circle>
+
+
+    </svg>
+    <div class="verylong">
+    </div>
+    <script src="index.js"></script>
+
+    <script src='canvas.js'></script>
+</body>
+
+</html>
